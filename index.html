@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your Name - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+
+        header {
+            background-color: #c3aed6;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            transition: background-color 0.3s;
+        }
+
+        header:hover {
+            background-color: #b8a1cf;
+        }
+
+        header h1 {
+            margin: 0.5rem 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #fff4e6;
+        }
+
+        section {
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 900px;
+        }
+
+        #about, #skills, #contact {
+            background: #e6e1f2;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        #about:hover, #skills:hover, #contact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #5a4e8f;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label, form input, form textarea, form button {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        form input, form textarea {
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #b0a7d4;
+            font-size: 1rem;
+            background-color: #f9f9ff;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus, form textarea:focus {
+            outline: none;
+            border-color: #5a4e8f;
+        }
+
+        form button {
+            padding: 12px;
+            background: #5a4e8f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        form button:hover {
+            background-color: #443a71;
+            transform: scale(1.05);
+        }
+
+        form button:active {
+            background-color: #3b3362;
+            transform: scale(0.95);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #c3aed6;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Button animation for active state */
+        button:focus {
+            outline: none;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Your Name</h1>
+        <p>Web Developer | Designer | Creative Enthusiast</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi! I'm [Your Name], a passionate web developer with expertise in creating modern, responsive, and user-friendly websites. I love working on exciting projects and learning new technologies.</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript & jQuery</li>
+            <li>React & Angular</li>
+            <li>Node.js & Express</li>
+            <li>Python & Django</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+
+    <script>
+        // Form Validation
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill out all fields.");
+            } else {
+                alert(`Thank you, ${name}! Your message has been sent.`);
+            }
+        });
+    </script>
+</body>
+</html>
